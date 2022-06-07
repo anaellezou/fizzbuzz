@@ -32,7 +32,7 @@ This project uses Docker to run properly. Run the following command to build the
 
 ```bash
 cd fizzbuzz/
-docker image build -t fizzbuzz-app:latest
+docker image build -t fizzbuzz-app:latest .
 ```
 
 ## Usage
