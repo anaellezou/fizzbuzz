@@ -31,12 +31,12 @@ http://localhost:5000/
 This guides you to the Homepage. If you want to access the actual fizzbuzz you can go to:
 
 ```bash
-http://localhost:5000/fizzbuzz
+curl --location --compress --request GET 'http://localhost:5000/fizzbuzz'
 ```
 The arguments should be passed as query parameters. Here is an example:
 
 ```bash
-http://localhost:5000/fizzbuzz?int1=3&int2=5&limit=15&str1=fizz&str2=buzz
+curl --location --compress --request GET 'http://localhost:5000/fizzbuzz?int1=3&int2=5&limit=30&str1=fizz&str2=buzz'
 ```
 
 This repository contains a tests.py file that you can run with:
