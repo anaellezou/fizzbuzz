@@ -3,7 +3,7 @@ Fizzbuzz REST API technical test
 
 ## OVERVIEW
 
-This project is a simple fizz-buzz REST server
+This project is a simple fizz-buzz REST server.
 You can read the whole description in the exercise.txt file
 
 ## Installation
