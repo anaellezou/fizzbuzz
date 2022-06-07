@@ -72,8 +72,6 @@ To improve this project, I have a list of ideas:
 
 Have a better file architecture.
 
-Add Pytest and Pylint. To have a proper view of the 100% test coverage, and also make sure there is no linting error.
-
 Use Nginx which would have handled the compression of the response.
 
 Add the bonus enpoint for the Statistics
