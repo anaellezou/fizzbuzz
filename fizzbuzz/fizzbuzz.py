@@ -1,20 +1,23 @@
-from flask import Flask, request, jsonify, make_response
+""" Simple fizzbuzz REST API """
 import json
 import gzip
+from flask import Flask, request, jsonify, make_response
 
 app = Flask(__name__)
 
 # Homepage
 @app.route("/", methods=["GET"])
 def homepage():
+    """ Homepage """
     return 'Hello Leboncoin'
 
-# Endpoint that returns a list of strings with numbers from 1 to limit
-# all multiple of int1 are replaced by str1
-# all multiples of int2 are replaced by str2
-# all multiples of int1 and int2 are replaced by str1str2
 @app.route('/fizzbuzz', methods=['GET'])
-def getFizzBuzz():
+def get_fizzbuzz():
+    """ Endpoint that returns a list of strings with numbers from 1 to limit
+        all multiple of int1 are replaced by str1
+        all multiples of int2 are replaced by str2
+        all multiples of int1 and int2 are replaced by str1str2
+    """
     # get params passed through the url
     int1 = request.args.get('int1', type = int)
     int2 = request.args.get('int2', type = int)
@@ -31,8 +34,9 @@ def getFizzBuzz():
     # check if str1 and str2 are correct
     if str1 != "fizz" or str2 != "buzz":
         return make_response(jsonify("Error: wrong strings were given"), 400)
-    
+
     # Fizzbuzz logic
+    # pylint: disable=no-else-continue
     fizzbuzz = []
     for i in range(1, limit+1):
         if i % int1 == 0 and i % int2 == 0:
@@ -46,7 +50,7 @@ def getFizzBuzz():
             continue
         else:
             fizzbuzz.append(i)
-    
+
     # compress result to get a lightweight response
     data = gzip.compress(json.dumps(fizzbuzz).encode('utf8'))
 

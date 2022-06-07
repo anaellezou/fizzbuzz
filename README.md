@@ -60,11 +60,17 @@ This repository contains a tests.py file that you can run with:
 python -m unittest tests.py
 ```
 
+You can run pylint on any python file by running:
+```bash
+pylint tests.py
+pylint fizzbuzz.py
+```
+
 ## COMMENTS AND IMPROVEMENTS
 
 To improve this project, I have a list of ideas:
 
-Have a better file architecture. For exemple the Onion architecture could have been a great way to manage my files.
+Have a better file architecture.
 
 Add Pytest and Pylint. To have a proper view of the 100% test coverage, and also make sure there is no linting error.
 
