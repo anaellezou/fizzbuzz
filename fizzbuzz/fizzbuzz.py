@@ -2,14 +2,16 @@
 import json
 import gzip
 from flask import Flask, request, jsonify, make_response
+from raccoon import raccoon_api
 
 app = Flask(__name__)
+app.register_blueprint(raccoon_api)
 
 # Homepage
 @app.route("/", methods=["GET"])
 def homepage():
     """ Homepage """
-    return 'Hello Leboncoin'
+    return 'Hello Anaelle'
 
 @app.route('/fizzbuzz', methods=['GET'])
 def get_fizzbuzz():
